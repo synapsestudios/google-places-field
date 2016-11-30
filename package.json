@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Google Places input component",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:synapsestudios/google-places-field.git"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.18.0",
