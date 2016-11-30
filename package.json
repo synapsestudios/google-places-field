@@ -1,0 +1,35 @@
+{
+  "name": "google-places-field",
+  "version": "0.0.1",
+  "description": "Google Places input component",
+  "main": "lib/index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-jsx": "^2.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-preset-es2015": "^6.18.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
+    "react-addons-shallow-compare": "^15.4.1"
+  },
+  "peerDependencies": {
+    "react": "^15.4.0",
+    "react-geosuggest": "^2.0.0"
+  },
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "npm run clean && babel src --out-dir lib",
+    "build:watch": "npm run build -- --watch",
+    "lint": "eslint src",
+    "prepublish": "npm run lint && npm test && npm run build"
+  },
+  "author": "Synapse Studios",
+  "license": "MIT"
+}
