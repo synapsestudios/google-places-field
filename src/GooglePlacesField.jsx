@@ -6,12 +6,14 @@ class GooglePlacesField extends Component
   static propTypes = {
     id: PropTypes.string,
     label: PropTypes.string,
+    placeholder: PropTypes.string,
     onSelect: PropTypes.func.isRequired,
     validationMessages: PropTypes.arrayOf(PropTypes.string),
   }
 
   static defaultProps = {
     id: 'google-places-field',
+    placeholder: 'Start Typing',
   }
 
   constructor() {
@@ -67,7 +69,7 @@ class GooglePlacesField extends Component
         <Geosuggest
           label={this.props.label}
           id={this.props.id}
-          placeholder="Start Typing"
+          placeholder={this.props.placeholder}
           onSuggestSelect={this.onSelect}
         />
       </div>
