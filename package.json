@@ -7,7 +7,9 @@
     "type": "git",
     "url": "git@github.com:synapsestudios/google-places-field.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-geosuggest": "^2.0.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
@@ -24,8 +26,7 @@
     "react-addons-shallow-compare": "^15.4.1"
   },
   "peerDependencies": {
-    "react": "^15.4.0",
-    "react-geosuggest": "^2.0.0"
+    "react": "^15.4.0"
   },
   "scripts": {
     "clean": "rm -rf lib",
