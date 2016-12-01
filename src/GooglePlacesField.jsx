@@ -16,8 +16,8 @@ class GooglePlacesField extends Component
     placeholder: 'Start Typing',
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.onSelect = this.onSelect.bind(this);
   }
