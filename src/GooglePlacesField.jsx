@@ -1,5 +1,8 @@
+/* eslint import/no-unresolved: 0 */
+/* eslint import/extensions: 0 */
 import React, { Component, PropTypes } from 'react';
 import Geosuggest from 'react-geosuggest';
+import './style.css';
 
 class GooglePlacesField extends Component
 {

@@ -23,14 +23,15 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
-    "react-addons-shallow-compare": "^15.4.1"
+    "react-addons-shallow-compare": "^15.4.1",
+    "stylus": "^0.54.5"
   },
   "peerDependencies": {
     "react": "^15.4.0"
   },
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "npm run clean && babel src --out-dir lib",
+    "build": "npm run clean && babel src --out-dir lib && stylus src/style.styl -o lib/style.css",
     "build:watch": "npm run build -- --watch",
     "lint": "eslint src",
     "prepublish": "npm run lint && npm test && npm run build"

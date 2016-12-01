@@ -6,6 +6,6 @@
         "func-names": 1,
         "new-cap": [2, {"newIsCapExceptions": ["fromJS"]}],
         "no-param-reassign": [2, { "props": false }],
-        "no-unused-vars": [2, { "args": "none" }]
+        "no-unused-vars": [2, { "args": "none" }],
     }
 }
