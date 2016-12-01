@@ -8,6 +8,7 @@
     "url": "git@github.com:synapsestudios/google-places-field.git"
   },
   "dependencies": {
+    "react-addons-shallow-compare": "^15.4.1",
     "react-geosuggest": "^2.0.0"
   },
   "devDependencies": {
@@ -23,7 +24,6 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
-    "react-addons-shallow-compare": "^15.4.1",
     "stylus": "^0.54.5"
   },
   "peerDependencies": {
