@@ -49,6 +49,7 @@ class GooglePlacesField extends Component
     formattedData.address = `${streetNumber} ${route}`;
     formattedData.latitude = data.location.lat;
     formattedData.longitude = data.location.lng;
+    formattedData.data = data;
 
     this.props.onSelect(formattedData);
   }
