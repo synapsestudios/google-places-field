@@ -24,6 +24,10 @@ class GooglePlacesField extends Component
   }
 
   onSelect(data) {
+    if (!data.gmaps) {
+      return;
+    }
+
     const formattedData = {};
     let streetNumber = '';
     let route = '';
