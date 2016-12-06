@@ -2,14 +2,12 @@
 /* eslint import/extensions: 0 */
 import React, { Component, PropTypes } from 'react';
 import Geosuggest from 'react-geosuggest';
+import omit from 'lodash.omit';
 import './style.css';
 
 class GooglePlacesField extends Component
 {
   static propTypes = {
-    id: PropTypes.string,
-    label: PropTypes.string,
-    placeholder: PropTypes.string,
     onSelect: PropTypes.func.isRequired,
     validationMessages: PropTypes.arrayOf(PropTypes.string),
   }
@@ -67,14 +65,13 @@ class GooglePlacesField extends Component
   }
 
   render() {
+    const passThruProps = omit(this.props, ['validationMessages', 'onSelect']);
     return (
       <div>
         {this.renderValidationMessages()}
         <Geosuggest
-          label={this.props.label}
-          id={this.props.id}
-          placeholder={this.props.placeholder}
           onSuggestSelect={this.onSelect}
+          {...passThruProps}
         />
       </div>
     );
