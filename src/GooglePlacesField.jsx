@@ -5,11 +5,11 @@ import Geosuggest from 'react-geosuggest';
 import omit from 'lodash.omit';
 import './style.css';
 
-class GooglePlacesField extends Component
-{
+class GooglePlacesField extends Component {
   static propTypes = {
+    id: PropTypes.string,
     onSelect: PropTypes.func.isRequired,
-    validationMessages: PropTypes.arrayOf(PropTypes.string),
+    placeholder: PropTypes.string,
   }
 
   static defaultProps = {
@@ -56,28 +56,15 @@ class GooglePlacesField extends Component
     this.props.onSelect(formattedData);
   }
 
-  renderValidationMessages() {
-    if (this.props.validationMessages && this.props.validationMessages.length) {
-      return this.props.validationMessages.map(message => (
-        <span className="address--validation-message" key={message}>
-          {message}
-        </span>
-      ));
-    }
-
-    return null;
-  }
-
   render() {
-    const passThruProps = omit(this.props, ['validationMessages', 'onSelect']);
+    const passThruProps = omit(this.props, ['id', 'onSelect', 'placeholder']);
     return (
-      <div>
-        {this.renderValidationMessages()}
-        <Geosuggest
-          onSuggestSelect={this.onSelect}
-          {...passThruProps}
-        />
-      </div>
+      <Geosuggest
+        id={this.props.id}
+        onSuggestSelect={this.onSelect}
+        placeholder={this.props.placeholder}
+        {...passThruProps}
+      />
     );
   }
 }
