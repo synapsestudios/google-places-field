@@ -1,8 +1,7 @@
-$alabaster = #fafafa;
-$mist = #b1c1c5;
-$white = #fff;
-$medium = 500;
-$card-box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+// Slightly-opinionated-but-hopefully-not-too-much
+// initial configuration for geosuggest input and results
+$border-color = #b1c1c5;
+$box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
 .geosuggest {
     position: relative;
@@ -13,8 +12,8 @@ $card-box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     height: 48px;
     font-size: 16px;
     line-height: 20px;
-    padding: 12px 16px;
-    border: solid 2px $mist;
+    padding: 14px 16px;
+    border: solid 1px $border-color;
     margin: 0 !important;
 }
 
@@ -23,27 +22,27 @@ $card-box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     width: 100%;
     top: 48px;
     left: 0;
-    background: $white;
+    background: #fff;
     z-index: 9999;
 }
 
 .geosuggest__suggests {
-    border: solid 1px $mist;
-    box-shadow: $card-box-shadow;
+    border: solid 1px $border-color;
+    box-shadow: $box-shadow;
+}
+
+.geosuggest__suggests--hidden {
+    display: none;
 }
 
 .geosuggest__item {
     padding: 16px;
     line-height: 1.25;
 
-    // Styling for mouse hover *or* keyboard up/down navigation on geosuggest results
+    // Styling for mouse hover *and* keyboard up/down navigation on geosuggest results
     &:hover,
     &--active {
-        background: $alabaster;
-        font-weight: $medium;
+        background: #fafafa;
+        font-weight: 500;
     }
-}
-
-.geosuggest__suggests--hidden {
-    display: none;
 }
