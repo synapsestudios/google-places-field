@@ -14,14 +14,16 @@ $box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     line-height: 20px;
     padding: 14px 16px;
     border: solid 1px $border-color;
-    margin: 0 !important;
+    margin: 0;
+}
+
+.geosuggest label + .geosuggest__input {
+    margin-top: 8px;
 }
 
 .geosuggest__suggests-wrapper {
     position: absolute;
     width: 100%;
-    top: 48px;
-    left: 0;
     background: #fff;
     z-index: 9999;
 }
