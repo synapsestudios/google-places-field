@@ -12,13 +12,17 @@ $box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     height: 48px;
     font-size: 16px;
     line-height: 20px;
-    padding: 14px 16px;
+    padding: 13px 16px;
     border: solid 1px $border-color;
     margin: 0;
 }
 
-.geosuggest label + .geosuggest__input {
-    margin-top: 8px;
+.geosuggest label {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 8px; // Using padding rather than margin for label click hitbox
 }
 
 .geosuggest__suggests-wrapper {
