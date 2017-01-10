@@ -60,6 +60,7 @@ class GooglePlacesField extends Component {
     const passThruProps = omit(this.props, ['id', 'onSelect', 'placeholder']);
     return (
       <Geosuggest
+        ref={(input) => { this.geosuggestInputRef = input; }}
         id={this.props.id}
         onSuggestSelect={this.onSelect}
         placeholder={this.props.placeholder}
