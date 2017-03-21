@@ -1,13 +1,9 @@
 {
-  "env": {
-    "testing": {
-      "plugins": ["rewire"]
-    }
-  },
+  "comments": false,
   "plugins": [
-      "transform-object-rest-spread",
-      "transform-react-jsx",
-      "transform-class-properties",
+    "transform-object-rest-spread",
+    "transform-react-jsx",
+    "transform-class-properties"
   ],
   "presets": [
     "es2015"
