@@ -1,7 +1,7 @@
 // Slightly-opinionated-but-hopefully-not-too-much
 // initial configuration for geosuggest input and results
-$border-color ?= #b1c1c5;
-$box-shadow ?= 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+$react-geosuggest--border-color ?= #b1c1c5;
+$react-geosuggest--box-shadow ?= 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
 .geosuggest {
     position: relative;
@@ -13,7 +13,7 @@ $box-shadow ?= 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     font-size: 16px;
     line-height: 20px;
     padding: 13px 16px;
-    border: solid 1px $border-color;
+    border: solid 1px $react-geosuggest--border-color;
     margin: 0;
 }
 
@@ -33,8 +33,8 @@ $box-shadow ?= 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 .geosuggest__suggests {
-    border: solid 1px $border-color;
-    box-shadow: $box-shadow;
+    border: solid 1px $react-geosuggest--border-color;
+    box-shadow: $react-geosuggest--box-shadow;
 }
 
 .geosuggest__suggests--hidden {

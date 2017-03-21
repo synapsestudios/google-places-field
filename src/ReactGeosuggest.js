@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Geosuggest from 'react-geosuggest';
 import omit from 'lodash.omit';
 
-class GooglePlacesField extends Component {
+class ReactGeosuggest extends Component {
   static propTypes = {
     id: PropTypes.string,
     onSelect: PropTypes.func.isRequired,
@@ -10,7 +10,7 @@ class GooglePlacesField extends Component {
   };
 
   static defaultProps = {
-    id: 'google-places-field',
+    id: 'react-geosuggest',
     placeholder: 'Start Typing',
   };
 
@@ -63,4 +63,4 @@ class GooglePlacesField extends Component {
   }
 }
 
-export default GooglePlacesField;
+export default ReactGeosuggest;
