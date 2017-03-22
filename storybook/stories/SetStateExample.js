@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Script from 'react-load-script';
-import ReactGeosuggest from '../../src/ReactGeosuggest';
+import GooglePlaces from '../../src/GooglePlaces';
 import { action } from '@kadira/storybook';
 
 import '../../styles/index.css';
@@ -40,21 +40,18 @@ class SetStateExample extends Component {
               onError={this.onGoogleApiError}
             />
           : null}
-        <h1>@synapsestudios/react-geosuggest</h1>
+        <h1>@synapsestudios/react-google-places</h1>
         {googleApiLoaded
-          ? <ReactGeosuggest
-              onSelect={this.onSelect}
-              value={this.state.result}
-            />
+          ? <GooglePlaces onSelect={this.onSelect} value={this.state.result} />
           : null}
         <h3>Example Usage:</h3>
         <pre>
           {
             `import React, { Component } from 'react';
 import Script from 'react-load-script';
-import ReactGeosuggest from '@synapsestudios/react-geosuggest';
+import GooglePlaces from '@synapsestudios/react-google-places';
 
-import '@synapsestudios/react-geosuggest/lib/react-geosuggest.min.css';
+import '@synapsestudios/react-google-places/lib/react-google-places.min.css';
 
 class SetStateExample extends Component {
   state = {
@@ -73,13 +70,14 @@ class SetStateExample extends Component {
     const { googleApiLoaded } = this.state;
     return (
       <div>
-        <Script
-          url='https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places'
-          onLoad={this.onGoogleApiLoaded}
-          onError={this.onGoogleApiError}
-        />
+       {!googleApiLoaded
+          ? <Script
+            url='https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places'
+            onLoad={this.onGoogleApiLoaded}
+            onError={this.onGoogleApiError}
+          /> : null}
         {googleApiLoaded
-          ? <ReactGeosuggest
+          ? <GooglePlaces
               onSelect={this.onSelect}
               value={this.state.result}
             />

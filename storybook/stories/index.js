@@ -4,7 +4,6 @@ import { storiesOf } from '@kadira/storybook';
 import SetStateExample from './SetStateExample';
 import '../../styles/index.css';
 
-storiesOf(
-  '<ReactGeosuggest />',
-  module,
-).add('setState Example (default)', () => <SetStateExample />);
+storiesOf('<GooglePlaces />', module).add('setState Example (default)', () => (
+  <SetStateExample />
+));

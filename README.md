@@ -1,52 +1,52 @@
-# [@synapsestudios/react-geosuggest](https://synapsestudios.github.io/react-geosuggest/)
+# [@synapsestudios/react-google-places](https://synapsestudios.github.io/react-google-places/)
 
 A slightly-modified implementation of [React Geosuggest](https://github.com/ubilabs/react-geosuggest).
 
-[![npm version](https://img.shields.io/npm/v/@synapsestudios/react-geosuggest.svg?style=flat)](https://www.npmjs.com/package/@synapsestudios/react-geosuggest)
-[![react-geosuggest dependencies](https://img.shields.io/david/synapsestudios/react-geosuggest.svg)](https://david-dm.org/synapsestudios/react-geosuggest)
-[![react-geosuggest peer dependencies](https://img.shields.io/david/peer/synapsestudios/react-geosuggest.svg)](https://david-dm.org/synapsestudios/react-geosuggest?type=peer)
+[![npm version](https://img.shields.io/npm/v/@synapsestudios/react-google-places.svg?style=flat)](https://www.npmjs.com/package/@synapsestudios/react-google-places)
+[![react-google-places dependencies](https://img.shields.io/david/synapsestudios/react-google-places.svg)](https://david-dm.org/synapsestudios/react-google-places)
+[![react-google-places peer dependencies](https://img.shields.io/david/peer/synapsestudios/react-google-places.svg)](https://david-dm.org/synapsestudios/react-google-places?type=peer)
 
 ## Demo
 
-A demo is available at [https://synapsestudios.github.io/react-geosuggest/](https://synapsestudios.github.io/react-geosuggest/)
+A demo is available at [https://synapsestudios.github.io/react-google-places/](https://synapsestudios.github.io/react-google-places/)
 
 ## Usage
 
 #### Installing via CLI
 ```js
 // yarn
-yarn add @synapsestudios/react-geosuggest
+yarn add @synapsestudios/react-google-places
 
 // npm
-npm install --save @synapsestudios/react-geosuggest
+npm install --save @synapsestudios/react-google-places
 ```
 
 #### Importing JS
 ```js
-import ReactGeosuggest from '@synapsestudios/react-geosuggest';
+import GooglePlaces from '@synapsestudios/react-google-places';
 ```
 
 #### Importing CSS
 ```js
 // Minified, autoprefixed css
-import '@synapsestudios/react-geosuggest/lib/react-geosuggest.min.css';
+import '@synapsestudios/react-google-places/lib/react-google-places.min.css';
 
 // Not-minified, not-autoprefixed css
-import '@synapsestudios/react-geosuggest/lib/react-geosuggest.css';
+import '@synapsestudios/react-google-places/lib/react-google-places.css';
 ```
 
 #### Using Stylus
 If you are using Stylus you can import the .styl file into your build:
 ```styl
-@import '@synapsestudios/react-geosuggest/lib/react-geosuggest.styl';
+@import '@synapsestudios/react-google-places/lib/react-google-places.styl';
 ```
 ! See the [Stylus Variables](#stylus-variables) section below for variables/details.
 
 #### Using with an ES6 `Class` and React Component State
 ```jsx
 import React, { Component } from 'react';
-import ReactGeosuggest from '@synapsestudios/react-geosuggest';
-import '@synapsestudios/react-geosuggest/lib/react-geosuggest.min.css';
+import GooglePlaces from '@synapsestudios/react-google-places';
+import '@synapsestudios/react-google-places/lib/react-google-places.min.css';
 
 class SetStateExample extends Component {
   constructor(props) {
@@ -60,7 +60,7 @@ class SetStateExample extends Component {
   onChange = result => this.setState(result);
 
   render() {
-    return <ReactGeosuggest onChange={this.onChange} value={this.state.result} />;
+    return <GooglePlaces onChange={this.onChange} value={this.state.result} />;
   }
 }
 
@@ -96,62 +96,16 @@ value: PropTypes.shape({
 }).isRequired,
 ```
 
-### Optional `Props`
-
-#### canvasHeight:
-
-`canvasHeight` is a `string` for the container inline style `height` property.
-```js
-canvasHeight: PropTypes.string, // default: '360px'
-```
-
-#### canvasWidth:
-
-`canvasWidth` is a `string` for the container inline style `width` property.
-
-```js
-canvasWidth: PropTypes.string, // default: '100%'
-```
-
-#### className:
-
-`className` is a `string` for the outermost container class name.
-
-```js
-className: PropTypes.string, // default: ''
-```
-
-#### cropperOptions:
-
-`cropperOptions` is an `object` for customizing the cropper component. Lists of available options can be found here: https://github.com/roadmanfong/react-cropper
-```js
-cropperOptions: PropTypes.object, // default: {guides: true, viewMode: 0, autoCropArea: 1}
-```
-
-#### maxFileSize:
-
-`maxFileSize` is a maximum `number` (in bytes) for file upload validation.
-```js
-maxFileSize: PropTypes.object, // default: 3145728
-```
-
-#### allowedFileTypes:
-
-`allowedFileTypes` is an `array` (of strings) of valid MIME types for file upload validation.
-```js
-allowedFileTypes: PropTypes.array, // default: ['image/jpeg', 'image/jpg', 'image/png']
-```
-
 ### Stylus Variables
-react-geosuggest comes with a set of stylus variables that can be overridden to add your own project-specific theming, as shown below:
+react-google-places comes with a set of stylus variables that can be overridden to add your own project-specific theming, as shown below:
 
 ```styl
 /* Theming by overriding default stylus variables with your projects colors */
 
-$react-geosuggest--border-color = #b1c1c5;
-$react-geosuggest--box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+$react-google-places--border-color = #b1c1c5;
+$react-google-places--box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
-@import '@synapsestudios.com/react-geosuggest/css/react-geosuggest.styl';
+@import '@synapsestudios.com/react-google-places/css/react-google-places.styl';
 ```
 
 ## Contributing
