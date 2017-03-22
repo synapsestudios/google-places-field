@@ -1,3 +1,3 @@
-import GooglePlacesField from './GooglePlacesField';
+import GooglePlaces from './GooglePlaces';
 
-export default GooglePlacesField;
+export default GooglePlaces;
