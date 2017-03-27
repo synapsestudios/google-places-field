@@ -4,13 +4,11 @@ import omit from 'lodash.omit';
 
 class GooglePlaces extends Component {
   static propTypes = {
-    id: PropTypes.string,
     onSelect: PropTypes.func.isRequired,
     placeholder: PropTypes.string,
   };
 
   static defaultProps = {
-    id: 'react-google-places',
     placeholder: 'Start Typing',
   };
 
@@ -48,15 +46,13 @@ class GooglePlaces extends Component {
   };
 
   render() {
-    const passThruProps = omit(this.props, ['id', 'onSelect', 'placeholder']);
+    const passThruProps = omit(this.props, ['onSelect']);
     return (
       <Geosuggest
         ref={input => {
           this.geosuggestInputRef = input;
         }}
-        id={this.props.id}
         onSuggestSelect={this.onSelect}
-        placeholder={this.props.placeholder}
         {...passThruProps}
       />
     );

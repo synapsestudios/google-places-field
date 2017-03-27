@@ -30,19 +30,20 @@ class SetStateExample extends Component {
   };
 
   render() {
-    const { googleApiLoaded } = this.state;
+    const { googleApiLoaded, googleApiError } = this.state;
     return (
       <div>
         {!googleApiLoaded
           ? <Script
-              url="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDvgbceyFAP8QbGpNSVt45PPGDUylFokI&amp;libraries=places"
+              url="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;libraries=places"
               onLoad={this.onGoogleApiLoaded}
               onError={this.onGoogleApiError}
             />
           : null}
         <h1>@synapsestudios/react-google-places</h1>
-        {googleApiLoaded
-          ? <GooglePlaces onSelect={this.onSelect} value={this.state.result} />
+        {googleApiLoaded ? <GooglePlaces onSelect={this.onSelect} /> : null}
+        {googleApiError
+          ? <div>An error occured loading the Google Places API</div>
           : null}
         <h3>Example Usage:</h3>
         <pre>
@@ -60,27 +61,34 @@ class SetStateExample extends Component {
     result: null,
   };
 
-  onGoogleApiLoaded = () => this.setState({ googleApiLoaded: true });
+  onGoogleApiLoaded = () => {
+    this.setState({ googleApiLoaded: true });
+  };
 
-  onGoogleApiError = error => this.setState({ googleApiError: true });
+  onGoogleApiError = error => {
+    this.setState({ googleApiError: true });
+  };
 
-  onSelect = result => this.setState(result);
+  onSelect = result => {
+    console.log(result);
+    this.setState(result);
+  };
 
   render() {
-    const { googleApiLoaded } = this.state;
+    const { googleApiLoaded, googleApiError } = this.state;
     return (
       <div>
        {!googleApiLoaded
           ? <Script
-            url='https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places'
+            url="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"
             onLoad={this.onGoogleApiLoaded}
             onError={this.onGoogleApiError}
           /> : null}
         {googleApiLoaded
-          ? <GooglePlaces
-              onSelect={this.onSelect}
-              value={this.state.result}
-            />
+          ? <GooglePlaces onSelect={this.onSelect} />
+          : null}
+        {googleApiError
+          ? <div>An error occured while loading the Google Places API</div>
           : null}
       </div>
     );

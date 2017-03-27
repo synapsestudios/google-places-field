@@ -45,56 +45,76 @@ If you are using Stylus you can import the .styl file into your build:
 #### Using with an ES6 `Class` and React Component State
 ```jsx
 import React, { Component } from 'react';
+import Script from 'react-load-script';
 import GooglePlaces from '@synapsestudios/react-google-places';
+
 import '@synapsestudios/react-google-places/lib/react-google-places.min.css';
 
 class SetStateExample extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    googleApiLoaded: false,
+    googleApiError: false,
+    result: null,
+  };
 
-    this.state = {
-      result: null,
-    };
-  }
+  onGoogleApiLoaded = () => {
+    this.setState({ googleApiLoaded: true });
+  };
 
-  onChange = result => this.setState(result);
+  onGoogleApiError = error => {
+    this.setState({ googleApiError: true });
+  };
+
+  onSelect = result => {
+    console.log(result);
+    this.setState(result);
+  };
 
   render() {
-    return <GooglePlaces onChange={this.onChange} value={this.state.result} />;
+    const { googleApiLoaded, googleApiError } = this.state;
+    return (
+      <div>
+       {!googleApiLoaded
+          ? <Script
+            url="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"
+            onLoad={this.onGoogleApiLoaded}
+            onError={this.onGoogleApiError}
+          /> : null}
+        {googleApiLoaded
+          ? <GooglePlaces onSelect={this.onSelect} />
+          : null}
+        {googleApiError
+          ? <div>An error occured while loading the Google Places API</div>
+          : null}
+      </div>
+    );
   }
 }
 
 export default SetStateExample;
 ```
-
+<!--
 #### Using with a ReduxForm (v6) `Field` Component
 ```
 // TODO: Add simple example to storybook + readme
 ```
+-->
 
 ## API
 
 ### Required `Props`
 
-#### onChange: (required)
+#### onSelect: (required)
 
-`onChange` is the callback `function` necessary to update the parent component with the final cropped image file. `onChange` receives a `File` object as an argument.
+`onSelect` is the callback `function` invoked when a user selects an address from the Google Places dropdown.
+`onSelect` returns an `object` with formatted location data as well as the original Google Places data object.
 ```js
-onChange: PropTypes.func.isRequired,
+onSelect: PropTypes.func.isRequired,
 ```
 
-#### value: (required)
+### Additional `Props`
 
-`onChange` is the callback `function` necessary to update the parent component with the final cropped image file. `onChange` receives a `File` object as an argument.
-```js
-value: PropTypes.shape({
-  result: PropTypes.any, // Resulting DataURL from Cropper.js crop box
-  filename: PropTypes.any, // Original filename from uploaded file
-  filetype: PropTypes.any, // Original MIME type from uploaded file
-  src: PropTypes.any, // Original DataURL from the FileReader.result
-  error: PropTypes.any, // Error returned from fileSize/fileType validators
-}).isRequired,
-```
+Any additional props will be passed thru directly to the [React Geosuggest](https://github.com/ubilabs/react-geosuggest) component. See their documentation for additional props/usage.
 
 ### Stylus Variables
 react-google-places comes with a set of stylus variables that can be overridden to add your own project-specific theming, as shown below:
