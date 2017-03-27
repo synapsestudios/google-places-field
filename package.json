@@ -14,7 +14,6 @@
   "main": "lib/index.js",
   "dependencies": {
     "lodash.omit": "^4.5.0",
-    "react-addons-shallow-compare": "^15.0.0",
     "react-geosuggest": "^2.0.0"
   },
   "devDependencies": {
