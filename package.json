@@ -1,13 +1,13 @@
 {
-  "name": "@synapsestudios/react-google-places",
+  "name": "@synapsestudios/google-places-field",
   "version": "0.3.0",
   "description": "A slightly-modified implementation of React Geosuggest",
   "repository": {
     "type": "git",
-    "url": "https://github.com/synapsestudios/react-google-places.git"
+    "url": "https://github.com/synapsestudios/google-places-field.git"
   },
   "bugs": {
-    "url": "https://github.com/synapsestudios/react-google-places/issues"
+    "url": "https://github.com/synapsestudios/google-places-field/issues"
   },
   "author": "Synapse Studios",
   "license": "MIT",
@@ -48,7 +48,7 @@
   "scripts": {
     "clean": "rm -rf lib && rm -rf .out",
     "build": "npm run clean && babel src -d lib && npm run build-stylus",
-    "build-stylus": "stylus styles/index.styl -o lib/react-google-places.css && stylus styles/index.styl -c -u autoprefixer-stylus -o lib/react-google-places.min.css && cp styles/index.styl lib/react-google-places.styl",
+    "build-stylus": "stylus styles/index.styl -o lib/google-places-field.css && stylus styles/index.styl -c -u autoprefixer-stylus -o lib/google-places-field.min.css && cp styles/index.styl lib/google-places-field.styl",
     "lint": "eslint src",
     "precommit": "lint-staged",
     "precommit-lint": "eslint",

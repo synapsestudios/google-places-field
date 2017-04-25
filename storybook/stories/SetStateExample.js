@@ -40,7 +40,7 @@ class SetStateExample extends Component {
               onError={this.onGoogleApiError}
             />
           : null}
-        <h1>@synapsestudios/react-google-places</h1>
+        <h1>@synapsestudios/google-places-field</h1>
         {googleApiLoaded ? <GooglePlaces onSelect={this.onSelect} /> : null}
         {googleApiError
           ? <div>An error occured loading the Google Places API</div>
@@ -50,9 +50,9 @@ class SetStateExample extends Component {
           {
             `import React, { Component } from 'react';
 import Script from 'react-load-script';
-import GooglePlaces from '@synapsestudios/react-google-places';
+import GooglePlaces from '@synapsestudios/google-places-field';
 
-import '@synapsestudios/react-google-places/lib/react-google-places.min.css';
+import '@synapsestudios/google-places-field/lib/google-places-field.min.css';
 
 class SetStateExample extends Component {
   state = {

@@ -1,44 +1,44 @@
-# [@synapsestudios/react-google-places](https://synapsestudios.github.io/react-google-places/)
+# [@synapsestudios/google-places-field](https://synapsestudios.github.io/google-places-field/)
 
 A slightly-modified implementation of [React Geosuggest](https://github.com/ubilabs/react-geosuggest).
 
-[![npm version](https://img.shields.io/npm/v/@synapsestudios/react-google-places.svg?style=flat)](https://www.npmjs.com/package/@synapsestudios/react-google-places)
-[![react-google-places dependencies](https://img.shields.io/david/synapsestudios/react-google-places.svg)](https://david-dm.org/synapsestudios/react-google-places)
-[![react-google-places peer dependencies](https://img.shields.io/david/peer/synapsestudios/react-google-places.svg)](https://david-dm.org/synapsestudios/react-google-places?type=peer)
+[![npm version](https://img.shields.io/npm/v/@synapsestudios/google-places-field.svg?style=flat)](https://www.npmjs.com/package/@synapsestudios/google-places-field)
+[![google-places-field dependencies](https://img.shields.io/david/synapsestudios/google-places-field.svg)](https://david-dm.org/synapsestudios/google-places-field)
+[![google-places-field peer dependencies](https://img.shields.io/david/peer/synapsestudios/google-places-field.svg)](https://david-dm.org/synapsestudios/google-places-field?type=peer)
 
 ## Demo
 
-A demo is available at [https://synapsestudios.github.io/react-google-places/](https://synapsestudios.github.io/react-google-places/)
+A demo is available at [https://synapsestudios.github.io/google-places-field/](https://synapsestudios.github.io/google-places-field/)
 
 ## Usage
 
 #### Installing via CLI
 ```js
 // yarn
-yarn add @synapsestudios/react-google-places
+yarn add @synapsestudios/google-places-field
 
 // npm
-npm install --save @synapsestudios/react-google-places
+npm install --save @synapsestudios/google-places-field
 ```
 
 #### Importing JS
 ```js
-import GooglePlaces from '@synapsestudios/react-google-places';
+import GooglePlaces from '@synapsestudios/google-places-field';
 ```
 
 #### Importing CSS
 ```js
 // Minified, autoprefixed css
-import '@synapsestudios/react-google-places/lib/react-google-places.min.css';
+import '@synapsestudios/google-places-field/lib/google-places-field.min.css';
 
 // Not-minified, not-autoprefixed css
-import '@synapsestudios/react-google-places/lib/react-google-places.css';
+import '@synapsestudios/google-places-field/lib/google-places-field.css';
 ```
 
 #### Using Stylus
 If you are using Stylus you can import the .styl file into your build:
 ```styl
-@import '@synapsestudios/react-google-places/lib/react-google-places.styl';
+@import '@synapsestudios/google-places-field/lib/google-places-field.styl';
 ```
 ! See the [Stylus Variables](#stylus-variables) section below for variables/details.
 
@@ -46,9 +46,9 @@ If you are using Stylus you can import the .styl file into your build:
 ```jsx
 import React, { Component } from 'react';
 import Script from 'react-load-script';
-import GooglePlaces from '@synapsestudios/react-google-places';
+import GooglePlaces from '@synapsestudios/google-places-field';
 
-import '@synapsestudios/react-google-places/lib/react-google-places.min.css';
+import '@synapsestudios/google-places-field/lib/google-places-field.min.css';
 
 class SetStateExample extends Component {
   state = {
@@ -117,15 +117,15 @@ onSelect: PropTypes.func.isRequired,
 Any additional props will be passed thru directly to the [React Geosuggest](https://github.com/ubilabs/react-geosuggest) component. See their documentation for additional props/usage.
 
 ### Stylus Variables
-react-google-places comes with a set of stylus variables that can be overridden to add your own project-specific theming, as shown below:
+google-places-field comes with a set of stylus variables that can be overridden to add your own project-specific theming, as shown below:
 
 ```styl
 /* Theming by overriding default stylus variables with your projects colors */
 
-$react-google-places--border-color = #b1c1c5;
-$react-google-places--box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+$google-places-field--border-color = #b1c1c5;
+$google-places-field--box-shadow = 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 
-@import '@synapsestudios.com/react-google-places/css/react-google-places.styl';
+@import '@synapsestudios.com/google-places-field/css/google-places-field.styl';
 ```
 
 ## Contributing
