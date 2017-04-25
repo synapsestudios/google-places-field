@@ -1,10 +1,11 @@
+npm-debug.log*
 src
 test
-.babelrc
-
-npm-debug.log*
 _vimrc_local.vim
-.npm
-.git
+.babelrc
+.editorconfig
 .eslintcache
+.git
+.lintstagedrc
 .node_repl_history
+.npm
